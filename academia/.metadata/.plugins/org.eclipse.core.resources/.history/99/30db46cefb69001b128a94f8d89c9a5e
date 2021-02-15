@@ -1,0 +1,28 @@
+package br.com.senaijandira;
+
+import br.com.senaijandira.model.Aluno;
+import br.com.senaijandira.gui.Frame;
+
+public class Aplicacao {
+	public static void main(String[] args) {
+		Frame tela =  new  Frame ();
+		tela . criarTela ();
+		
+		
+		Aluno Joao = new Aluno();
+//		Joao.setNome("SemIdeias");
+		Joao.setPeso(65.8);
+		Joao.setAltura(1.75);
+		
+		System.out.println(Joao.getAltura());
+		System.out.println(Joao.getPeso());
+		
+//		Joao.getNome();
+//		LocalDate dataNascimento = LocalDate.parse("2003, 05, 1");
+//		LocalDate hoje = LocalDate.now();
+//		System.out.println(dataNascimento);
+//		
+//		Period idade = Period.between(dataNascimento, hoje);		
+//		System.out.println(idade);
+	}
+}

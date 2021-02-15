@@ -1,0 +1,131 @@
+package br.com.senaijandira.model;
+
+import java.time.LocalDate;
+
+public class Aluno {
+	private String nome;
+	private LocalDate dataNascimento;
+	private char sexo;
+	private double peso;
+	private double altura;
+	private int nivelAtividade;
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+	// ***//
+//	public void setDataNascimento(String dataNascimento) {
+//		this.dataNascimento = dataNascimento;
+//	}	
+//	
+//	public String  setNasciento() {
+//	System.out.println("Data/Hora atual: "+c.getTime());
+//	System.out.println("Ano: "+c.get(Calendar.YEAR));
+//	System.out.println("Mês: "+c.get(Calendar.MONTH));
+//	System.out.println("Dia do Mês: "+c.get(Calendar.DAY_OF_MONTH));
+// 	}
+
+//	String x=request.getParameter("dataUsuario"); //pegando dados de um formulário WEB
+//	SimpleDateFormat sdf1= new SimpleDateFormat("dd/MM/yyyy"); //você pode usar outras máscaras
+//	Date y=new Date();
+//	System.out.println(sdf1.format(y));
+
+//	public static void main(String[] args) throws ParseException{
+//		Calendar c = Calendar.getInstance();
+//		Date data = c.getTime();
+//		DateFormat f = DateFormat.getDateInstance();
+//
+//		Date data2 = f.parse("12/01/1995");
+//		System.out.println(data2);
+//
+//		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//		System.out.println("Data formatada: "+sdf.format(data));
+//
+//		//Converte Objetos
+//		System.out.println(“Data convertida: ”+sdf.parse("02/08/1970"));
+//	}
+
+	public LocalDate getDataNascimento() {
+		return this.dataNascimento;
+	}
+
+	// ***//
+	public void setSexo(char sexo) {
+		this.sexo = sexo;
+	}
+
+	public char getSexo() {
+		return this.sexo;
+	}
+
+	// ***//
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+
+	public double getPeso() {
+		return this.peso;
+	}
+
+	// ***//
+	public void setAltura(double altura) {
+		this.altura = altura;
+	}
+
+	public double getAltura() {
+		return this.altura;
+	}
+
+	// ***//
+	public void setNivelAtividade(int nivelAtividade) {
+		this.nivelAtividade = nivelAtividade;
+	}
+
+	// ***//
+	public int getNivelAtividade() {
+		return this.nivelAtividade;
+	}
+
+	/// ***///
+
+	public double getResultadoImc() {
+		double calculoImc = peso/Math.pow(this.altura, 2);
+		return calculoImc;
+	}
+
+	public String getImc() {
+//		double calculoImc = peso / Math.pow(this.altura, 2);
+//		String imcString = String.valueOf(calculoImc);
+		if (calculoImc <= 0) {
+			return("Seu Imc é de " + calculoImc + "Você digitou algo invalido");
+		} else {
+			if (calculoImc > 0 && calculoImc <= 18.5) {
+				return("Seu Imc é de " + calculoImc + " Você está abaixo do peso");
+			} else {
+				if (calculoImc >= 18.5 && calculoImc <= 24.9) {
+					return("Seu Imc é de " + calculoImc + " Você está no peso ideal, PARABÉNS!");
+				} else {
+					if (calculoImc >= 24.9 && calculoImc <= 29.9) {
+						return("Seu Imc é de " + calculoImc + " Você está levemente acima do peso");
+					} else {
+						if (calculoImc >= 29.9 && calculoImc <= 34.9) {
+							return("Seu Imc é de " + calculoImc + " Você está com obesidade grau I");
+						} else {
+							if (calculoImc >= 34.9 && calculoImc <= 39.9) {
+								return("Seu Imc é de " + calculoImc + " Você está com obesidade grau II (severa)");
+							} else {
+								if (calculoImc > 39.9) {
+									return("Seu Imc é de " + calculoImc + " Você está com obesidade grau III (mórbida)");
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

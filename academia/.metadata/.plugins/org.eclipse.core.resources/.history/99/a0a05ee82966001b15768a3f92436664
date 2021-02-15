@@ -1,0 +1,22 @@
+package br.com.senaijandira;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
+import br.com.senaijandira.model.Aluno;
+
+public class Aplicacao {
+	public static void main(String[] args) {
+		Aluno Joao = new Aluno();
+		Joao.setNome("SemIdeias");
+		Joao.setPeso(65.8);
+		Joao.setAltura(1.75);
+
+		NumberFormat formatter = new DecimalFormat("#0,00");
+		System.out.println(formatter.format(2.54352753275));
+
+		DecimalFormat df = new DecimalFormat("#,###.00");
+		df.format(1234.36);
+		System.out.println(Joao.resultadoImc());
+	}
+}

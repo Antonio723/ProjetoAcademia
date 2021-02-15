@@ -1,0 +1,15 @@
+package br.com.senaijandira;
+
+import br.com.senaijandira.model.Aluno;
+
+public class Aplicacao {
+	public static void main(String[] args) {
+		Aluno Joao = new Aluno();
+		Joao.setNome("SemIdeias");
+		Joao.setPeso(65.8);
+		Joao.setAltura(1.75);
+		
+		
+		System.out.println(%.2f,Joao.resultadoImc());
+	}
+}

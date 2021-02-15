@@ -1,0 +1,13 @@
+package br.com.senaijandira.model;
+
+public class Aluno {
+	private String nome;
+	private char sexo;
+	private double peso;
+	private double altura;
+	private int nivelAtividade;
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+}

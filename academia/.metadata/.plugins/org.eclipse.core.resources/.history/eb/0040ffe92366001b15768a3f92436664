@@ -1,0 +1,9 @@
+package br.com.senaijandira;
+
+import br.com.senaijandira.model.Aluno;
+
+public class Aplicacao {
+	public static void main(String[] args) {
+		System.out.println(Aluno.resultadoImc);
+	}
+}
